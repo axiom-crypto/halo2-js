@@ -1,4 +1,4 @@
-import init, { initThreadPool, init_panic_hook, Halo2Wasm, Halo2LibWasm } from "@axiom-crypto/halo2-wasm/web/halo2_wasm";
+import init, { initThreadPool, init_panic_hook, Halo2Wasm, Halo2LibWasm } from "@axiom-crypto/halo2-wasm/web";
 
 export const getHalo2Wasm = async (numThreads: number) => {
     await init();

@@ -1,4 +1,4 @@
-import { Halo2Wasm, init_panic_hook, Halo2LibWasm } from "@axiom-crypto/halo2-wasm/js/halo2_wasm";
+import { Halo2Wasm, init_panic_hook, Halo2LibWasm } from "@axiom-crypto/halo2-wasm/js";
 
 export const getHalo2Wasm = () => {
     init_panic_hook();
