@@ -11,7 +11,7 @@ const parseInputs = (inputs: string) => {
 const BLINDING_FACTOR = 20;
 
 export const autoConfigCircuit = (circuit: Halo2Wasm, config: CircuitConfig) => {
-    const stats = circuit.get_circuit_stats();
+    const stats = circuit.getCircuitStats();
 
     for (let i = 6; i < 20; i++) {
         if (stats.advice <= (2 ** i - BLINDING_FACTOR) * config.numAdvice && stats.lookup <= 2 ** i - BLINDING_FACTOR && stats.instance <= (2 ** i - BLINDING_FACTOR) * config.numInstance) {
