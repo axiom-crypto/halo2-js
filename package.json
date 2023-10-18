@@ -1,6 +1,6 @@
 {
   "name": "@axiom-crypto/halo2-js",
-  "version": "0.1.85",
+  "version": "0.1.86",
   "description": "Halo2 Javascript library",
   "main": "index.js",
   "scripts": {
