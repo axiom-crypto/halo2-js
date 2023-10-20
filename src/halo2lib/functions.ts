@@ -262,7 +262,7 @@ export class Halo2Lib {
      * @param a - The first circuit value.
      * @param b - The second circuit value.
      */
-    assertEqual = (a: CircuitValue, b: CircuitValue) => this. _halo2lib.constrain_equal(a.cell(), b.cell());
+    checkEqual = (a: CircuitValue, b: CircuitValue) => this. _halo2lib.constrain_equal(a.cell(), b.cell());
 
     /**
      * Checks if a circuit value is within a specified range.

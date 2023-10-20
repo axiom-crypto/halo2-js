@@ -1,10 +1,10 @@
 {
   "name": "@axiom-crypto/halo2-js",
-  "version": "0.1.86",
+  "version": "0.1.90",
   "description": "Halo2 Javascript library",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf ./dist && tsc && node ./scripts/postTsc.js"
+    "build": "rm -rf ./dist && node ./scripts/convertDTs.js && tsc && node ./scripts/postTsc.js"
   },
   "keywords": [
     "axiom",
@@ -29,8 +29,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@axiom-crypto/halo2-wasm": "^0.1.50",
-    "@axiom-crypto/tools": "^0.3.21",
+    "@axiom-crypto/halo2-wasm": "^0.1.51",
     "ethers": "^6.7.1",
     "prettier": "1.18.2"
   },

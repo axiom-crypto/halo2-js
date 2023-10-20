@@ -140,12 +140,12 @@ declare const dec: (a: CircuitValue) => CircuitValue;
 /**
  * Selects a circuit value based on a condition.
  *
- * @param a The condition circuit value.
+ * @param a The first circuit value.
  * @param b The first circuit value.
- * @param c The second circuit value.
- * @returns The selected circuit value.
+ * @param sel The condition boolean circuit value.
+ * @returns sel ? a : b
  */
-declare const select: (a: CircuitValue, b: CircuitValue, c: CircuitValue) => CircuitValue;
+declare const select: (a: CircuitValue, b: CircuitValue, sel: CircuitValue) => CircuitValue;
 /**
  * Performs a bitwise OR-AND operation on three circuit values.
  *
@@ -215,7 +215,7 @@ declare const numToBits: (a: CircuitValue, len: RawCircuitInput) => CircuitValue
  * @param a The first circuit value.
  * @param b The second circuit value.
  */
-declare const assertEqual: (a: CircuitValue, b: CircuitValue) => void;
+declare const checkEqual: (a: CircuitValue, b: CircuitValue) => void;
 /**
  * Checks if a circuit value is within a specified range.
  *
@@ -286,12 +286,6 @@ declare const value: (a: CircuitValue) => any;
  * @param args The `CircuitValue`s to log.
  */
 declare const log: (...args: any) => void;
-/**
- * Makes a circuit value public.
- *
- * @param a The circuit value to make public.
- */
-declare const makePublic: (a: CircuitValue) => void;
 declare const console: {
     /**
      * Logs any *non CircuitValue* to the console. Use `log` for logging `CircuitValue`s.
