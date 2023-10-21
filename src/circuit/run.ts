@@ -15,8 +15,8 @@ export const autoConfigCircuit = (circuit: Halo2Wasm, config: CircuitConfig) => 
 
     for (let i = 6; i < 20; i++) {
         if (stats.advice <= (2 ** i - BLINDING_FACTOR) * config.numAdvice && stats.lookup <= 2 ** i - BLINDING_FACTOR && stats.instance <= (2 ** i - BLINDING_FACTOR) * config.numInstance) {
-            config.k = i;
-            config.numLookupBits = i - 1;
+            config.k = i + 1;
+            config.numLookupBits = i;
             break;
         }
     }
@@ -26,6 +26,8 @@ export const autoConfigCircuit = (circuit: Halo2Wasm, config: CircuitConfig) => 
 
 
 export function Halo2CircuitRunner(circuit: Halo2Wasm, halo2LibWasm: Halo2LibWasm, config: CircuitConfig) {
+
+    config = { ...config };
 
     const clear = () => {
         circuit.clear();
