@@ -280,9 +280,9 @@ export class Halo2Lib {
      * @param c - The range of the circuit values.
      */
     checkLessThan = (a: CircuitValue, b: CircuitValue, c: string = this._MAX_BITS) => {
-        this.rangeCheck(a, c);
-        this.rangeCheck(b, c);
-        this. _halo2lib.check_less_than(a.cell(), b.cell(), c);
+        this.rangeCheck(a, convertInput(c));
+        this.rangeCheck(b, convertInput(c));
+        this. _halo2lib.check_less_than(a.cell(), b.cell(), this.getPaddedNumBits(c));
     }
 
     /**
